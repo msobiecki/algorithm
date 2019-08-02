@@ -1,15 +1,10 @@
-# algorithm
- A collection of popular algorithms implemented in JavaScript
-
-
 # Algorithm
 
 <img align="right" height="260" src="https://image.flaticon.com/icons/png/512/1119/1119005.png">
 
-
 ### Documentation
 
- A collection of popular algorithms implemented in JavaScript:
+A collection of popular algorithms implemented in JavaScript:
 
 1. Sort by selecting
 2. Recursion
