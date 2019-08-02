@@ -6,7 +6,11 @@
 
 A collection of popular algorithms implemented in JavaScript:
 
-1. Sort by selecting
+1. Binary search
+2. Sort algorithms
+    - Select sort
+
+
 2. Recursion
 3. Fast sorting
 4. Shortcut tables
