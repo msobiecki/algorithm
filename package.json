@@ -1,4 +1,20 @@
 {
+  "name": "algorithm",
+  "version": "1.0.0",
+  "description": "A collection of popular algorithms implemented in JavaScript.",
+  "main": "index.js",
+  "homepage": "https://github.com/SaliMike/algorithm",
+  "bugs": "https://github.com/SaliMike/algorithm/issues",
+  "repository": {
+    "url": "https://github.com/SaliMike/algorithm",
+    "type": "git"
+  },
+  "author": "Michal Sobiecki <kontakt@codeshaker.pl>",
+  "license": "GNU General Public License v3.0",
+  "keywords": [
+    "algorithm",
+    "javascript"
+  ],
   "scripts": {
     "test": "jest"
   },
