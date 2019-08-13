@@ -30,6 +30,7 @@ describe('[TEST RECURSION] -', () => {
     const result = await recursion(data, condition, operation, callback);
     expect(result.sum).toBe(20);
   });
+
   it('should return 13', async () => {
     const data = { arr: [2, 1, 10, 1, 5], sum: 0 };
     const condition = data => data.sum >= 4;
