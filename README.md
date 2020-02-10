@@ -11,8 +11,8 @@ A collection of popular algorithms implemented in JavaScript:
    - Select sort
    - Quick sort
 3. Recursion
+4. Shortcut tables
 
-4) Shortcut tables
 5) Searching through
 6) Dijkstra's algorithm
 7) Greedy algorithms
