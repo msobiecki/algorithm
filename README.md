@@ -13,11 +13,7 @@ A collection of popular algorithms implemented in JavaScript:
 3. Recursion
 4. Shortcut tables
 
-<<<<<<< HEAD
-=======
 TODO:
-4) Shortcut tables
->>>>>>> ac53f43728996ea7e10d81b5d1a217305cdde16b
 5) Searching through
 6) Dijkstra's algorithm
 7) Greedy algorithms
