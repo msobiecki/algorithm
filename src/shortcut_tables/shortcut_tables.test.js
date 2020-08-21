@@ -17,7 +17,7 @@ describe('[TEST SHORTCUT TABLES] -', () => {
       'ONE',
       'ONE',
       'ONE',
-      'ONE'
+      'ONE',
     ];
     const result = shortcut_tables(data);
     expect(result).toStrictEqual({ ONE: 4, TWO: 2, THREE: 2, FOUR: 1 });

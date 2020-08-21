@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/recursion/index.js"],"names":["recursion"],"mappings":";;;;;;;AAAA;;;;eAEeA,kB","sourcesContent":["import recursion from './recursion';\n\nexport default recursion;\n"],"file":"index.js"}

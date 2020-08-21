@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/sort_algorithms/index.js"],"names":["select_sort","quick_sort"],"mappings":";;;;;;;AAAA;;AACA;;;;eAEe;AAAEA,EAAAA,WAAW,EAAXA,uBAAF;AAAeC,EAAAA,UAAU,EAAVA;AAAf,C","sourcesContent":["import select_sort from './select_sort';\nimport quick_sort from './quick_sort';\n\nexport default { select_sort, quick_sort };\n"],"file":"index.js"}

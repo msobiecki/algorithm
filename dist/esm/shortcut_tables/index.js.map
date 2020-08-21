@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/shortcut_tables/index.js"],"names":["shortcut_tables"],"mappings":";;;;;;;AAAA;;;;eAEeA,wB","sourcesContent":["import shortcut_tables from './shortcut_tables';\n\nexport default shortcut_tables;\n"],"file":"index.js"}
