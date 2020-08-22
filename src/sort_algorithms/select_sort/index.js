@@ -1,3 +1,3 @@
-import recursion from './recursion';
+import select_sort from './select_sort';
 
-export default recursion;
+export default select_sort;
