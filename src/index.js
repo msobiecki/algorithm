@@ -3,5 +3,6 @@ import Search from './search_algorithms';
 import Sort from './sort_algorithms';
 import Recursion from './recursion';
 import ShortcutTables from './shortcut_tables';
+import Graph from './graph';
 
-export default { DeepCopy, Search, Sort, Recursion, ShortcutTables };
+export default { DeepCopy, Search, Sort, Recursion, ShortcutTables, Graph };
