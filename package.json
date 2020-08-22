@@ -1,6 +1,6 @@
 {
   "name": "@salimike/algorithm",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": false,
   "description": "A collection of popular algorithms implemented in JavaScript.",
   "main": "dist/js/index.js",

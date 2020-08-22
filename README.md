@@ -19,17 +19,16 @@ A collection of popular algorithms implemented in JavaScript:
    - Merge sort
    - Quick sort
    - Select sort
-6. Graph algorithms
-   - Binary Search Tree
+6. Binary Search Tree
+7. Graph algorithms
+   - Breadth First Search (BFS)
+   - Depth First Search (DFS)
 
-TODO:
+TODO: Algorithms
 
-- Breadth First Search (BFS)
-- Depth First Search (DFS)
 - Dijkstra's algorithm
 - Kruskal algorithm
-
-7. K nearest neighbors
+- K nearest neighbors
 
 ### Support / Contributing
 
