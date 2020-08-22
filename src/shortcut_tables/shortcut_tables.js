@@ -1,3 +1,7 @@
+/**
+ * Shortcut tables
+ * @param {array} arr
+ */
 export function shortcut_tables(arr) {
   const result = {};
   for (const item of arr) {

@@ -8,18 +8,22 @@ A collection of popular algorithms implemented in JavaScript:
 
 1. Binary search
 2. Sort algorithms
-   - Select sort
+   - Bubble sort
+   - Heap sort
+   - Insertion sort
+   - Merge sort
    - Quick sort
+   - Select sort
 3. Recursion
 4. Shortcut tables
 
 TODO:
-5) Searching through
-6) Dijkstra's algorithm
-7) Greedy algorithms
-8) Dynamic programming
-9) K nearest neighbors
-10) What's next
+
+5. Searching through
+6. Dijkstra's algorithm
+7. Greedy algorithms
+8. Dynamic programming
+9. K nearest neighbors
 
 ### Support / Contributing
 

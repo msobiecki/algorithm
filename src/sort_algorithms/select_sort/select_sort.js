@@ -1,3 +1,7 @@
+/**
+ * Find smallest
+ * @param {array} arr
+ */
 function find_smallest(arr) {
   let smallest_index = 0;
   let smallest = arr[smallest_index];
@@ -10,6 +14,10 @@ function find_smallest(arr) {
   return smallest_index;
 }
 
+/**
+ * Select sort
+ * @param {array} arr
+ */
 export function select_sort(arr) {
   const newArr = [];
   while (arr.length > 0) {
