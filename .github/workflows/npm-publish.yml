@@ -36,6 +36,33 @@ jobs:
       - run: npm ci
       # Run test step
       - run: npm test
+  version:
+    needs: test
+
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    
+    # The type of node version that the job will run on
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Use node
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+        
+      - name: Automated Version Bump
+        # You may pin to the exact commit or the version.
+        # uses: phips28/gh-action-bump-version@bbd196e988e4612476d63b183ab1146db423e4d2
+        uses: phips28/gh-action-bump-version@v8.0.18
+
 #   publish-npm:
 #     needs: build
 #     runs-on: ubuntu-latest
