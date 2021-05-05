@@ -1,12 +1,12 @@
 {
-  "name": "@salimike/algorithm",
+  "name": "@msobiecki/algorithm",
   "version": "1.0.5",
   "private": false,
   "description": "A collection of popular algorithms implemented in JavaScript.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "repository": {
-    "url": "git://git@github.com:SaliMike/algorithm.git"
+    "url": "git://git@github.com:msobiecki/algorithm.git"
   },
   "author": "Michał Sobiecki <kontakt@codeshaker.pl>",
   "license": "GNU General Public License v3.0",
@@ -35,9 +35,9 @@
     "rimraf": "^3.0.2"
   },
   "bugs": {
-    "url": "https://github.com/SaliMike/algorithm/issues"
+    "url": "https://github.com/msobiecki/algorithm/issues"
   },
-  "homepage": "https://github.com/SaliMike/algorithm/",
+  "homepage": "https://github.com/msobiecki/algorithm/",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
