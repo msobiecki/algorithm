@@ -80,6 +80,8 @@ jobs:
       - run: npm run clean
       # Run build step
       - run: npm run build:lib
+      - run: cd dist
+      - run: ls
       # Run publish step
       - name: Run publish
         uses: JS-DevTools/npm-publish@v1
