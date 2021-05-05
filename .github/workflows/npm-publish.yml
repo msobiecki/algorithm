@@ -36,7 +36,7 @@ jobs:
       - run: npm ci
       # Run test step
       - run: npm test
-  build:
+  publish:
     needs: test
 
     # The type of runner that the job will run on
@@ -65,38 +65,8 @@ jobs:
       # Run build step
       - run: npm run build:lib
       # Run version bump step
-      - name: Automated Version Bump
+      - name: Run version bump
         uses: phips28/gh-action-bump-version@v8.0.18
-
-  publish:
-    needs: build
-
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-    
-    # The type of node version that the job will run on
-    strategy:
-      matrix:
-        node-version: [14.x]
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Use node
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-          registry-url: https://registry.npmjs.org/
-          
-      # Run install step 
-      - run: npm ci
-      # Run clean step
-      - run: npm run clean
-      # Run build step
-      - run: npm run build:lib
       # Run publish step
-      - name: Release
-        uses: elgohr/Github-Release-Action@v3.1
+      - name: Run publish
+        uses: JS-DevTools/npm-publish@v1
