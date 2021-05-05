@@ -9,7 +9,7 @@
     "url": "git://git@github.com:msobiecki/algorithm.git"
   },
   "author": "Michał Sobiecki <kontakt@codeshaker.pl>",
-  "license": "GNU General Public License v3.0",
+  "license": "GNU General Public License v3.0 or later",
   "keywords": [
     "algorithm",
     "javascript"
