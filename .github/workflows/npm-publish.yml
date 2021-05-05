@@ -67,6 +67,9 @@ jobs:
       # Run version bump step
       - name: Run version bump
         uses: phips28/gh-action-bump-version@v8.0.18
+      # Run release bump step
+      - name: Run release
+        uses: fnkr/github-action-ghr@v1.3
       # Run publish step
       - name: Run publish
         uses: JS-DevTools/npm-publish@v1
