@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "test": "jest",
-    "build:lib": "npm build:babel",
+    "build:lib": "npm run build:babel",
     "build:babel": "concurrently \"npm run build:babel:esm && npm run build:babel:umd\" \"npm run build:babel:cjs\"",
     "build:babel:cjs": "cross-env BABEL_ENV=cjs babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js --presets=@babel/env",
     "build:babel:esm": "cross-env BABEL_ENV=esm babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/esm",
