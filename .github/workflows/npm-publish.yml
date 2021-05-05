@@ -61,9 +61,9 @@ jobs:
       # Run install step 
       - run: npm ci
       # Run clean step
-      - run: npm clean
+      - run: npm run clean
       # Run build step
-      - run: npm build:lib
+      - run: npm run build:lib
       # Run version bump step
       - name: Automated Version Bump
         uses: phips28/gh-action-bump-version@v8.0.18
