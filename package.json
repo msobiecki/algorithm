@@ -16,8 +16,8 @@
   ],
   "scripts": {
     "test": "jest",
-    "build:lib": "yarn build:babel",
-    "build:babel": "concurrently \"yarn build:babel:esm && yarn build:babel:umd\" \"yarn build:babel:cjs\"",
+    "build:lib": "npm build:babel",
+    "build:babel": "concurrently \"npm build:babel:esm && npm build:babel:umd\" \"npm build:babel:cjs\"",
     "build:babel:cjs": "cross-env BABEL_ENV=cjs babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js --presets=@babel/env",
     "build:babel:esm": "cross-env BABEL_ENV=esm babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/esm",
     "build:babel:umd": "cross-env BABEL_ENV=umd babel --source-maps --extensions \".js\" dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
@@ -28,6 +28,7 @@
     "@babel/preset-env": "^7.5.5",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "concurrently": "^5.3.0",
+    "cross-env": "^7.0.3",
     "husky": "^4.2.5",
     "jest": "^24.8.0",
     "lint-staged": "^10.2.11",
