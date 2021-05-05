@@ -67,9 +67,14 @@ jobs:
       # Run version bump step
       - name: Run version bump
         uses: phips28/gh-action-bump-version@v8.0.18
-      # Run release bump step
-      - name: Run release latest tag
+      # Run create latest tag step
+      - name: Run create latest tag
         uses: EndBug/latest-tag@v1.4.0
+      # Run release step
+      - name: Run release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # Run publish step
       - name: Run publish
         uses: JS-DevTools/npm-publish@v1
