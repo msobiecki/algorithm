@@ -36,7 +36,7 @@ jobs:
       - run: npm ci
       # Run test step
       - run: npm test
-  version:
+  build:
     needs: test
 
     # The type of runner that the job will run on
@@ -57,10 +57,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-        
+          
+      # Run install step 
+      - run: npm ci
+      # Run build step
+      - run: npm build
+      # Run version bump step
       - name: Automated Version Bump
-        # You may pin to the exact commit or the version.
-        # uses: phips28/gh-action-bump-version@bbd196e988e4612476d63b183ab1146db423e4d2
         uses: phips28/gh-action-bump-version@v8.0.18
 
 #   publish-npm:
