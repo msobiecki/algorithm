@@ -58,12 +58,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           
-      # Run install step 
-      - run: npm ci
-      # Run clean step
-      - run: npm run clean
-      # Run build step
-      - run: npm run build:lib
       # Run version bump step
       - name: Run version bump
         uses: phips28/gh-action-bump-version@v8.0.18
@@ -80,6 +74,12 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           automatic_release_tag: ${{ steps.tag.outputs.tag }}
           prerelease: false
+      # Run install step 
+      - run: npm ci
+      # Run clean step
+      - run: npm run clean
+      # Run build step
+      - run: npm run build:lib
       # Run publish step
       - name: Run publish
         uses: JS-DevTools/npm-publish@v1
