@@ -67,11 +67,18 @@ jobs:
       # Run version bump step
       - name: Run version bump
         uses: phips28/gh-action-bump-version@v8.0.18
+      # Get tag step
+      - name: Get tag
+        id: tag
+        uses: WyriHaximus/github-action-get-previous-tag@v1
+        with:
+          fallback: 1.0.0 # Optional fallback tag to use when no tag can be found
       # Run release step
       - name: Run release
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
+          automatic_release_tag: ${{ steps.tag.outputs.tag }}
           prerelease: false
       # Run publish step
       - name: Run publish
