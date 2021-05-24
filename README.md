@@ -36,4 +36,4 @@ Feel like home
 
 ### License
 
-See the [LICEANSE](LICEANSE).
+See the [LICENSE](LICENSE).
