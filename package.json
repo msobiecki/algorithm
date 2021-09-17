@@ -3,17 +3,21 @@
   "version": "1.4.1",
   "private": false,
   "description": "A collection of popular algorithms implemented in JavaScript.",
-  "main": "dist/js/index.js",
-  "module": "dist/esm/index.js",
-  "repository": {
-    "url": "git://git@github.com:msobiecki/algorithm.git"
-  },
-  "author": "Michał Sobiecki <kontakt@codeshaker.pl>",
-  "license": "GNU General Public License v3.0 or later",
   "keywords": [
     "algorithm",
     "javascript"
   ],
+  "homepage": "https://github.com/msobiecki/algorithm/",
+  "bugs": {
+    "url": "https://github.com/msobiecki/algorithm/issues"
+  },
+  "repository": {
+    "url": "git://git@github.com:msobiecki/algorithm.git"
+  },
+  "license": "GNU General Public License v3.0 or later",
+  "author": "Michał Sobiecki <kontakt@codeshaker.pl>",
+  "main": "dist/js/index.js",
+  "module": "dist/esm/index.js",
   "scripts": {
     "test": "jest",
     "build:lib": "npm run build:babel",
@@ -23,6 +27,12 @@
     "build:babel:umd": "cross-env BABEL_ENV=umd babel --source-maps --extensions \".js\" dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
     "clean": "rimraf dist"
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
   "devDependencies": {
     "@babel/cli": "^7.13.16",
     "@babel/preset-env": "^7.14.1",
@@ -31,21 +41,12 @@
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "concurrently": "^6.0.2",
     "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
     "husky": "^6.0.0",
     "jest": "^26.6.3",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2"
-  },
-  "bugs": {
-    "url": "https://github.com/msobiecki/algorithm/issues"
-  },
-  "homepage": "https://github.com/msobiecki/algorithm/",
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --single-quote --write",
-      "git add"
-    ]
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
