@@ -20,9 +20,9 @@ A collection of popular algorithms implemented in JavaScript:
    - Quick sort
    - Select sort
 6. Tree
-   - TODO: Binary Tree
+   - Binary Tree
    - Binary Search Tree (BST)
-   - TODO: Balanced Binary Search Tree (AVL)
+   - Balanced Binary Search Tree (AVL)
    - TODO: Red Black Tree
    - TODO: Binary Space Partitioning (BSP)
    - TODO: Binary Heap

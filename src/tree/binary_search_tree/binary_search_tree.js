@@ -1,7 +1,7 @@
 /**
  * Node class
  */
-class Node {
+export class Node {
   constructor(data) {
     this.data = data;
     this.parent = null;
@@ -117,7 +117,7 @@ class BinarySearchTree {
   interactiveSearch(node, data) {
     if (node === null) return null;
     let tempNode = node;
-    while (tempNode.data !== data) {
+    while (tempNode !== null && tempNode.data !== data) {
       if (data < tempNode.data) tempNode = tempNode.left;
       else tempNode = tempNode.right;
     }
@@ -125,6 +125,7 @@ class BinarySearchTree {
   }
 
   findSuccessor(node) {
+    if (node === null) return null;
     if (node.right !== null) return this.findMinNode(node.right);
     let tempNode = node.parent;
     while (tempNode !== null && tempNode.left !== node) {
@@ -135,6 +136,7 @@ class BinarySearchTree {
   }
 
   findPredecessor(node) {
+    if (node === null) return null;
     if (node.left !== null) return this.findMaxNode(node.left);
     let tempNode = node.parent;
     while (tempNode !== null && tempNode.right !== node) {
