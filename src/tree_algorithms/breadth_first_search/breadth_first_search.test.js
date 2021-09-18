@@ -1,8 +1,8 @@
-import BinarySearchTree from './../../graph';
-import breadth_first_search from './breadth_first_search';
+import BinarySearchTree from "./../../tree/binary_search_tree";
+import breadth_first_search from "./breadth_first_search";
 
-describe('[TEST GRAPH] -', () => {
-  it('should return breadth first search found', () => {
+describe("[TEST GRAPH] -", () => {
+  it("should return breadth first search found value in binary search tree", () => {
     const Graph = new BinarySearchTree();
     Graph.insert(10);
     Graph.insert(4);
@@ -12,18 +12,10 @@ describe('[TEST GRAPH] -', () => {
     Graph.insert(12);
     Graph.insert(18);
     const root = Graph.getRootNode();
-    expect(breadth_first_search(root, 18)).toStrictEqual([
-      10,
-      4,
-      17,
-      1,
-      9,
-      12,
-      18,
-    ]);
+    expect(breadth_first_search(root, 18)).toStrictEqual([10, 4, 17, 1, 9, 12, 18]);
   });
 
-  it('should return breadth first search not found', () => {
+  it("should return breadth first search not found in binary search tree", () => {
     const Graph = new BinarySearchTree();
     Graph.insert(15);
     Graph.insert(25);
