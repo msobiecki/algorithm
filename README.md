@@ -23,7 +23,7 @@ A collection of popular algorithms implemented in JavaScript:
    - Binary Tree
    - Binary Search Tree (BST)
    - Balanced Binary Search Tree (AVL)
-   - Red Black Tree
+   - TODO: Red Black Tree
 7. Tree algorithms
    - Breadth First Search (BFS)
    - Depth First Search (DFS)
