@@ -1,7 +1,6 @@
 export function breadth_first_search(tree, searchValue) {
   let queue = [];
   let path = [];
-
   queue.push(tree);
 
   while (queue.length > 0) {

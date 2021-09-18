@@ -19,16 +19,20 @@ A collection of popular algorithms implemented in JavaScript:
    - Merge sort
    - Quick sort
    - Select sort
-6. Binary Search Tree
-7. Graph algorithms
+6. Tree
+   - TODO: Binary Tree
+   - Binary Search Tree (BST)
+   - TODO: Binary Space Partitioning (BSP)
+   - TODO: Binary Heap
+7. Tree algorithms
    - Breadth First Search (BFS)
    - Depth First Search (DFS)
+8. TODO: Graph
+9. TODO: Graph algorithms
+   - TODO: Dijkstra's algorithm
+   - TODO: Kruskal algorithm
+   - TODO: K nearest neighbors
 
-TODO: Algorithms
-
-- Dijkstra's algorithm
-- Kruskal algorithm
-- K nearest neighbors
 
 ### Support / Contributing
 
