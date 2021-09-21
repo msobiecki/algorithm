@@ -6,12 +6,4 @@ import ShortcutTables from "./shortcut_tables";
 import Tree from "./tree";
 import TreeSearch from "./tree_algorithms";
 
-export default {
-  DeepCopy,
-  Search,
-  Sort,
-  Recursion,
-  ShortcutTables,
-  Tree,
-  TreeSearch,
-};
+export { DeepCopy, Search, Sort, Recursion, ShortcutTables, Tree, TreeSearch };
