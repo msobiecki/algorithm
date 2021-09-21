@@ -1,4 +1,6 @@
-import BinarySearchTree, { Node as BasicNode } from "../binary_search_tree/binary_search_tree";
+import BinarySearchTree, {
+  Node as BasicNode,
+} from "../binary_search_tree/binary_search_tree";
 
 /**
  * Node class
@@ -110,7 +112,8 @@ class BalancedBinarySearchTree extends BinarySearchTree {
 
   swapParentChildNode(oldChildNode, newChildNode, parentNode) {
     if (parentNode) {
-      const side = oldChildNode.parent.right === oldChildNode ? "right" : "left";
+      const side =
+        oldChildNode.parent.right === oldChildNode ? "right" : "left";
       parentNode[side] = newChildNode;
     } else {
       newChildNode.parent = null;
