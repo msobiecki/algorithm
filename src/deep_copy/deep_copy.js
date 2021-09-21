@@ -5,7 +5,7 @@
 export function deep_copy(inObject) {
   let outObject, value, key;
 
-  if (typeof inObject !== 'object' || inObject === null) {
+  if (typeof inObject !== "object" || inObject === null) {
     return inObject;
   }
 
