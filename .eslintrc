@@ -15,5 +15,6 @@
         "sourceType": "module"
     },
     "rules": {
+      "array-element-newline": "off"
     }
 }
