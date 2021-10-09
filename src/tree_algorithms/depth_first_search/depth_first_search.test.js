@@ -13,13 +13,7 @@ describe("[TEST DEPTH FIRST SEARCH TREE] -", () => {
     Tree.insert(18);
     const root = Tree.getRootNode();
     expect(depth_first_search(root, 18)).toStrictEqual([
-      10,
-      4,
-      1,
-      9,
-      17,
-      12,
-      18,
+      10, 4, 1, 9, 17, 12, 18,
     ]);
   });
 
