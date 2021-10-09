@@ -1,4 +1,6 @@
-import BinarySearchTree, { Node as BasicNode } from "../binary_search_tree/binary_search_tree";
+import BinarySearchTree, {
+  Node as BasicNode,
+} from "../binary_search_tree/binary_search_tree";
 
 export const COLOR_RED = Symbol("RED");
 export const COLOR_BLACK = Symbol("BLACK");
@@ -70,10 +72,12 @@ class RedBlackTree extends BinarySearchTree {
         let newGrandparentNode;
 
         if (node.grandparent.left === node.parent) {
-          if (node.parent.left === node) newGrandparentNode = this.leftLeftRotation(node.grandparent);
+          if (node.parent.left === node)
+            newGrandparentNode = this.leftLeftRotation(node.grandparent);
           else newGrandparentNode = this.leftRightRotation(node.grandparent);
         } else {
-          if (node.parent.right === node) newGrandparentNode = this.rightRightRotation(node.grandparent);
+          if (node.parent.right === node)
+            newGrandparentNode = this.rightRightRotation(node.grandparent);
           else newGrandparentNode = this.rightLeftRotation(node.grandparent);
         }
 
@@ -101,7 +105,7 @@ class RedBlackTree extends BinarySearchTree {
     // }
   }
 
-  leftRotation(node) {
+  leftRotation() {
     // const parentNode = node.parent;
     // const grandparentNode = parentNode.parent;
     // if (grandparentNode) {
@@ -121,7 +125,7 @@ class RedBlackTree extends BinarySearchTree {
     // }
   }
 
-  rightRotation(node) {
+  rightRotation() {
     // const parentNode = node.parent;
     // const grandparentNode = parentNode.parent;
     // if (grandparentNode) {
@@ -165,13 +169,17 @@ class RedBlackTree extends BinarySearchTree {
 
     if (grandparentParentNode) {
       if (grandparentNodeIsLeft) {
-        if (grandparentParentNode.left) grandparentParentNode.left.parent = null;
+        if (grandparentParentNode.left)
+          grandparentParentNode.left.parent = null;
         grandparentParentNode.left = parentNode;
-        if (grandparentParentNode.left) grandparentParentNode.left.parent = grandparentParentNode;
+        if (grandparentParentNode.left)
+          grandparentParentNode.left.parent = grandparentParentNode;
       } else {
-        if (grandparentParentNode.right) grandparentParentNode.right.parent = null;
+        if (grandparentParentNode.right)
+          grandparentParentNode.right.parent = null;
         grandparentParentNode.right = parentNode;
-        if (grandparentParentNode.right) grandparentParentNode.right.parent = grandparentParentNode;
+        if (grandparentParentNode.right)
+          grandparentParentNode.right.parent = grandparentParentNode;
       }
     } else {
       parentNode.parent = null;
@@ -229,13 +237,17 @@ class RedBlackTree extends BinarySearchTree {
 
     if (grandparentParentNode) {
       if (grandparentNodeIsLeft) {
-        if (grandparentParentNode.left) grandparentParentNode.left.parent = null;
+        if (grandparentParentNode.left)
+          grandparentParentNode.left.parent = null;
         grandparentParentNode.left = parentNode;
-        if (grandparentParentNode.left) grandparentParentNode.left.parent = grandparentParentNode;
+        if (grandparentParentNode.left)
+          grandparentParentNode.left.parent = grandparentParentNode;
       } else {
-        if (grandparentParentNode.right) grandparentParentNode.right.parent = null;
+        if (grandparentParentNode.right)
+          grandparentParentNode.right.parent = null;
         grandparentParentNode.right = parentNode;
-        if (grandparentParentNode.right) grandparentParentNode.right.parent = grandparentParentNode;
+        if (grandparentParentNode.right)
+          grandparentParentNode.right.parent = grandparentParentNode;
       }
     } else {
       parentNode.parent = null;

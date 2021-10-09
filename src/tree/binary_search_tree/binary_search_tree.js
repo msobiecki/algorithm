@@ -88,21 +88,33 @@ class BinarySearchTree {
 
   inOrder(node) {
     if (node !== null) {
-      return [...this.inOrder(node.left), node.data, ...this.inOrder(node.right)];
+      return [
+        ...this.inOrder(node.left),
+        node.data,
+        ...this.inOrder(node.right),
+      ];
     }
     return [];
   }
 
   preOrder(node) {
     if (node !== null) {
-      return [node.data, ...this.preOrder(node.left), ...this.preOrder(node.right)];
+      return [
+        node.data,
+        ...this.preOrder(node.left),
+        ...this.preOrder(node.right),
+      ];
     }
     return [];
   }
 
   postOrder(node) {
     if (node !== null) {
-      return [...this.postOrder(node.left), ...this.postOrder(node.right), node.data];
+      return [
+        ...this.postOrder(node.left),
+        ...this.postOrder(node.right),
+        node.data,
+      ];
     }
     return [];
   }

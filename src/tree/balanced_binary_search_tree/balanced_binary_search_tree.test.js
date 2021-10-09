@@ -1,5 +1,4 @@
 import BalancedBinarySearchTree from "./balanced_binary_search_tree";
-import { Node } from "../binary_search_tree/binary_search_tree";
 
 describe("[TEST BALANCED BINARY SEARCH TREE] -", () => {
   it("should return balanced tree with ll rotation", () => {
@@ -106,16 +105,7 @@ describe("[TEST BALANCED BINARY SEARCH TREE] -", () => {
     const root = Tree.getRootNode();
 
     expect(Tree.inOrder(root)).toStrictEqual([
-      5,
-      7,
-      9,
-      10,
-      13,
-      15,
-      17,
-      22,
-      25,
-      27,
+      5, 7, 9, 10, 13, 15, 17, 22, 25, 27,
     ]);
   });
 
@@ -134,16 +124,7 @@ describe("[TEST BALANCED BINARY SEARCH TREE] -", () => {
     const root = Tree.getRootNode();
 
     expect(Tree.postOrder(root)).toStrictEqual([
-      5,
-      9,
-      7,
-      13,
-      10,
-      17,
-      22,
-      27,
-      25,
-      15,
+      5, 9, 7, 13, 10, 17, 22, 27, 25, 15,
     ]);
   });
 
@@ -162,16 +143,7 @@ describe("[TEST BALANCED BINARY SEARCH TREE] -", () => {
     const root = Tree.getRootNode();
 
     expect(Tree.preOrder(root)).toStrictEqual([
-      15,
-      10,
-      7,
-      5,
-      9,
-      13,
-      25,
-      22,
-      17,
-      27,
+      15, 10, 7, 5, 9, 13, 25, 22, 17, 27,
     ]);
   });
 

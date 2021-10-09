@@ -1,7 +1,7 @@
-import deep_copy from './deep_copy';
+import deep_copy from "./deep_copy";
 
-describe('[TEST DEEP COPY] -', () => {
-  it('should return non-mutated array', () => {
+describe("[TEST DEEP COPY] -", () => {
+  it("should return non-mutated array", () => {
     const list = [1, 3, 8, 7, 6];
     const result = deep_copy(list);
     result[1] = 0;
@@ -10,7 +10,7 @@ describe('[TEST DEEP COPY] -', () => {
     expect(result).toStrictEqual([1, 0, 8, 7, 6]);
   });
 
-  it('should return sorted array', () => {
+  it("should return sorted array", () => {
     const list = [1, 1, 1, { value: 5 }, 1, 1, 1, 1, 1];
     const result = deep_copy(list);
     result[3].value = 0;

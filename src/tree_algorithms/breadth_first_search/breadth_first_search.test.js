@@ -12,7 +12,9 @@ describe("[TEST BREADTH FIRST SEARCH TREE] -", () => {
     Tree.insert(12);
     Tree.insert(18);
     const root = Tree.getRootNode();
-    expect(breadth_first_search(root, 18)).toStrictEqual([10, 4, 17, 1, 9, 12, 18]);
+    expect(breadth_first_search(root, 18)).toStrictEqual([
+      10, 4, 17, 1, 9, 12, 18,
+    ]);
   });
 
   it("should return breadth first search not found in binary search tree", () => {

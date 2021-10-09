@@ -15,7 +15,9 @@ describe("[TEST BINARY TREE] -", () => {
     Tree.insert(27);
 
     const root = Tree.getRootNode();
-    expect(Tree.inOrder(root)).toStrictEqual([5, 7, 9, 25, 27, 22, 15, 17, 10, 13]);
+    expect(Tree.inOrder(root)).toStrictEqual([
+      5, 7, 9, 25, 27, 22, 15, 17, 10, 13,
+    ]);
   });
 
   it("should return postOrder tree", () => {
@@ -31,7 +33,9 @@ describe("[TEST BINARY TREE] -", () => {
     Tree.insert(9);
     Tree.insert(27);
     const root = Tree.getRootNode();
-    expect(Tree.postOrder(root)).toStrictEqual([5, 9, 7, 27, 22, 25, 17, 13, 10, 15]);
+    expect(Tree.postOrder(root)).toStrictEqual([
+      5, 9, 7, 27, 22, 25, 17, 13, 10, 15,
+    ]);
   });
 
   it("should return preOrder tree", () => {
@@ -47,7 +51,9 @@ describe("[TEST BINARY TREE] -", () => {
     Tree.insert(9);
     Tree.insert(27);
     const root = Tree.getRootNode();
-    expect(Tree.preOrder(root)).toStrictEqual([15, 25, 7, 5, 9, 22, 27, 10, 17, 13]);
+    expect(Tree.preOrder(root)).toStrictEqual([
+      15, 25, 7, 5, 9, 22, 27, 10, 17, 13,
+    ]);
   });
 
   it("should return insert node tree", () => {
