@@ -60,7 +60,7 @@ jobs:
           
       # Run version bump step
       - name: Run version bump
-        uses: phips28/gh-action-bump-version@10.0.1
+        uses: phips28/gh-action-bump-version@v10.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # Get tag step
