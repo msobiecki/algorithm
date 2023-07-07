@@ -60,7 +60,7 @@ jobs:
           
       # Run version bump step
       - name: Run version bump
-        uses: phips28/gh-action-bump-version@v8.0.18
+        uses: phips28/gh-action-bump-version@v10.0.1
       # Get tag step
       - name: Get tag
         id: tag
