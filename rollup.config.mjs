@@ -1,7 +1,7 @@
-import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import nodeResolve from "@rollup/plugin-node-resolve";
-import pkg from "./package.json";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
+
+import pkg from './package.json' assert { type: 'json' };
 
 export default [
   // browser-friendly UMD build
@@ -14,7 +14,6 @@ export default [
     },
     plugins: [
       nodeResolve(),
-      resolve(), // so Rollup can find `ms`
       commonjs(), // so Rollup can convert `ms` to an ES module
     ],
   },
