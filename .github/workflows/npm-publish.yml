@@ -31,7 +31,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          token: ${{ secrets.ACTION_READ_PACKAGES_TOKEN }}
 
       # Run install step 
       - run: npm ci
@@ -58,7 +57,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          token: ${{ secrets.ACTION_READ_PACKAGES_TOKEN }}
           
       # Run version bump step
       - name: Run version bump
