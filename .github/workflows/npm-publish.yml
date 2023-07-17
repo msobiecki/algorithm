@@ -19,7 +19,7 @@ jobs:
     # The type of node version that the job will run on
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [18.x]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -45,7 +45,7 @@ jobs:
     # The type of node version that the job will run on
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [18.x]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
