@@ -40,10 +40,9 @@
   "devDependencies": {
     "@commitlint/cli": "^19.2.2",
     "@commitlint/config-conventional": "^19.2.2",
-    "@msobiecki/eslint-config": "^8.1.0",
+    "@msobiecki/eslint-config": "^8.2.0",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/jest": "^29.5.12",
-    "cross-env": "^7.0.3",
     "esbuild": "^0.20.2",
     "eslint": "^8.57.0",
     "husky": "^9.0.11",

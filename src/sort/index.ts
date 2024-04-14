@@ -4,5 +4,5 @@
 // import quick_sort from './quick_sort';
 // import select_sort from './select_sort';
 
-export { default as bubbleSort } from './bubbleSort';
-export { default as countingSort } from './countingSort';
+export { default as bubbleSort } from "./bubble-sort";
+export { default as countingSort } from "./counting-sort";

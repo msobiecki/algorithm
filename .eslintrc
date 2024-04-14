@@ -1,3 +1,6 @@
 {
-  "extends": "@msobiecki/eslint-config"
+  "extends": [
+    "@msobiecki/eslint-config", 
+    "@msobiecki/eslint-config/best-practice"
+  ]
 }

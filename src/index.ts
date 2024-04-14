@@ -1,4 +1,4 @@
-export * from './sort';
+export * from "./sort";
 
 // import DeepCopy from "./deep_copy";
 // import Search from "./search_algorithms";
