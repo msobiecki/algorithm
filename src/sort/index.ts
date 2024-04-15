@@ -1,4 +1,3 @@
-// import heap_sort from './heap_sort';
 // import insertion_sort from './insertion_sort';
 // import merge_sort from './merge_sort';
 // import quick_sort from './quick_sort';
@@ -6,3 +5,4 @@
 
 export { default as bubbleSort } from "./bubble-sort";
 export { default as countingSort } from "./counting-sort";
+export { default as heapSort } from "./heap-sort";
