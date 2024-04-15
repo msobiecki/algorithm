@@ -1,43 +1,38 @@
 # Algorithm
 
-<img align="right" height="260" src="https://image.flaticon.com/icons/png/512/1119/1119005.png">
+This project consists of a collection of popular algorithms implemented in JavaScript:
 
-### Documentation
-
-A collection of popular algorithms implemented in JavaScript:
-
-1. Deep copy
-2. Recursion
-3. Search algorithms
-   - Binary search
-   - Linear search
-4. Shortcut tables
-5. Sort algorithms
-   - Bubble sort
-   - Heap sort
-   - Insertion sort
-   - Merge sort
-   - Quick sort
-   - Select sort
-6. Tree
+1. **Deep Copy**
+2. **Recursion**
+3. **Search Algorithms**
+   - Binary Search
+   - Linear Search
+4. **Shortcut Tables**
+5. **Sort Algorithms**
+   - Bubble Sort
+   - Heap Sort
+   - Insertion Sort
+   - Merge Sort
+   - Quick Sort
+   - Selection Sort
+6. **Tree**
    - Binary Tree
    - Binary Search Tree (BST)
    - Balanced Binary Search Tree (AVL)
-   - TODO: Red Black Tree
-7. Tree algorithms
+   - _TODO: Red Black Tree_
+7. **Tree Algorithms**
    - Breadth First Search (BFS)
    - Depth First Search (DFS)
-8. TODO: Graph
-9. TODO: Graph algorithms
-   - TODO: Dijkstra's algorithm
-   - TODO: Kruskal algorithm
-   - TODO: K nearest neighbors
+8. _TODO: Graph_
+9. _TODO: Graph Algorithms_
+   - _TODO: Dijkstra's Algorithm_
+   - _TODO: Kruskal Algorithm_
+   - _TODO: K Nearest Neighbors_
 
+## Support / Contributing
 
-### Support / Contributing
+Contributions are welcome!
 
-Feel like home
+## License
 
-### License
-
-See the [LICENSE](LICENSE).
+See the [LICENSE](LICENSE) file for details.
