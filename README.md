@@ -19,7 +19,7 @@ This project consists of a collection of popular algorithms implemented in JavaS
    - Binary Tree
    - Binary Search Tree (BST)
    - Balanced Binary Search Tree (AVL)
-   - _TODO: Red Black Tree_
+   - Red Black Tree
 7. **Tree Algorithms**
    - Breadth First Search (BFS)
    - Depth First Search (DFS)
