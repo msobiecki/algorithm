@@ -28,7 +28,7 @@ jobs:
 
       # Use node
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         # Set env secrets
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_ACTIONS_READ_PACKAGES }}
