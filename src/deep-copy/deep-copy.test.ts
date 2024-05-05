@@ -14,7 +14,6 @@ describe("check deepCopy", () => {
     it("should return non-mutated array", () => {
       const list = [1, 1, 1, { value: 5 }, 1, 1, 1, 1, 1];
       const result = deepCopy(list);
-      console.log(result);
       if (result[3] && typeof result[3] === "object" && "value" in result[3]) {
         result[3].value = 0;
       }
