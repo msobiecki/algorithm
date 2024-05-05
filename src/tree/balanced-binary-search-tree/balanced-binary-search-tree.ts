@@ -39,7 +39,7 @@ class Node<T> extends BasicNode<T> {
  * Balanced Binary Search Tree class (AVL Tree)
  */
 class BalancedBinarySearchTree<T> extends BinarySearchTree<T> {
-  root!: Node<T> | null;
+  root: Node<T> | null = null;
 
   insert(data: T): void {
     const newNode = new Node(data);

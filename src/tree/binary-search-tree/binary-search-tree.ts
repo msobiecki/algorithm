@@ -4,7 +4,7 @@ import Node from "../node";
  * Binary Search Tree class
  */
 class BinarySearchTree<T> {
-  root: Node<T> | null;
+  root: Node<T> | null = null;
 
   constructor() {
     this.root = null;

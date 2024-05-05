@@ -4,7 +4,7 @@ import Node from "../node";
  * Binary Tree class
  */
 class BinaryTree<T> {
-  root: Node<T> | null;
+  root: Node<T> | null = null;
 
   constructor() {
     this.root = null;

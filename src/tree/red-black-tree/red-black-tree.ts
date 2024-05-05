@@ -47,7 +47,7 @@ class Node<T> extends BasicNode<T> {
  * Red Black Tree class
  */
 class RedBlackTree<T> extends BinarySearchTree<T> {
-  root!: Node<T> | null;
+  root: Node<T> | null = null;
 
   insert(data: T): void {
     const newNode = new Node(data);
