@@ -52,6 +52,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       packages: write
+      contents: write
     
     # The type of node version that the job will run on
     strategy:
@@ -74,7 +75,7 @@ jobs:
           
       # Run version bump step
       - name: Run version bump
-        uses: phips28/gh-action-bump-version@v10.0.1
+        uses: phips28/gh-action-bump-version@v11.0.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # Get tag step
