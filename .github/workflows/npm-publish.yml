@@ -37,6 +37,8 @@ jobs:
 
       # Run install step 
       - run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # Run test step
       - run: npm test
   publish:
