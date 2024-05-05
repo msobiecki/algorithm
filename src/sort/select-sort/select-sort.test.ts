@@ -1,21 +1,21 @@
-import quick_sort from "./quick_sort";
+import selectSort from "./select-sort";
 
-describe("[TEST QUICK SORT] -", () => {
+describe("check selectSort", () => {
   it("should return sorted array", () => {
     const list = [1, 3, 8, 7, 6];
-    const result = quick_sort(list);
+    const result = selectSort(list);
     expect(result).toStrictEqual([1, 3, 6, 7, 8]);
   });
 
   it("should return sorted array", () => {
     const list = [1, 1, 1, 8, 1, 1, 1, 1, 1];
-    const result = quick_sort(list);
+    const result = selectSort(list);
     expect(result).toStrictEqual([1, 1, 1, 1, 1, 1, 1, 1, 8]);
   });
 
   it("should return sorted array", () => {
     const list = [1, 2, 3];
-    const result = quick_sort(list);
+    const result = selectSort(list);
     expect(result).toStrictEqual([1, 2, 3]);
   });
 });
