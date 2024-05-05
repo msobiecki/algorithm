@@ -36,6 +36,8 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           node-version: ${{ matrix.node-version }}
+          registry-url: https://npm.pkg.github.com
+          scope: "@msobiecki"
 
       # Run install step 
       - run: npm ci
