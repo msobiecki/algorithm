@@ -1,5 +1,5 @@
 import BasicNode from "../node";
-import BinarySearchTree from "../binary_search_tree";
+import BinarySearchTree from "../binary-search-tree";
 
 export const COLOR_RED = Symbol("RED");
 export const COLOR_BLACK = Symbol("BLACK");
@@ -14,31 +14,32 @@ class Node<T> extends BasicNode<T> {
 
   right: Node<T> | null;
 
-  color: symbol | null;
+  color: symbol;
 
   constructor(data: T) {
     super(data);
     this.parent = null;
     this.left = null;
     this.right = null;
-    this.color = null;
+    this.color = COLOR_RED;
   }
 
   get sibling(): Node<T> | null {
     const { parent } = this;
     if (!parent) return null;
-    return parent.right === this ? parent.left : parent.right;
+    return parent.left === this ? parent.right : parent.left;
   }
 
   get uncle(): Node<T> | null {
     const { parent } = this;
-    if (!parent) return null;
+    if (!parent || !parent.parent) return null;
     return parent.sibling;
   }
 
   get grandparent(): Node<T> | null {
     const { parent } = this;
-    return parent && parent.parent;
+    if (!parent || !parent.parent) return null;
+    return parent.parent;
   }
 }
 
@@ -50,13 +51,13 @@ class RedBlackTree<T> extends BinarySearchTree<T> {
 
   insert(data: T): void {
     const newNode = new Node(data);
-    if (this.root === null) {
-      this.root = newNode;
-    } else {
+
+    if (this.root) {
       this.insertNode(this.root, newNode);
+    } else {
+      this.root = newNode;
     }
 
-    newNode.color = COLOR_RED;
     this.balance(newNode);
   }
 
@@ -66,96 +67,112 @@ class RedBlackTree<T> extends BinarySearchTree<T> {
   }
 
   balance(node: Node<T> | null): void {
-    if (!node || node === this.root) {
-      if (node) node.color = COLOR_BLACK;
+    if (!node) return;
+    if (node === this.root) {
+      node.color = COLOR_BLACK;
       return;
     }
 
-    if (node.parent?.color !== COLOR_RED) {
-      return;
-    }
+    let current = node;
+    let { parent } = current;
 
-    let { parent } = node;
-    const { grandparent } = node;
+    while (parent && parent.color === COLOR_RED) {
+      const grandparent = parent.parent;
 
-    const { uncle } = node;
-    if (uncle && uncle.color === COLOR_RED) {
-      parent.color = COLOR_BLACK;
-      uncle.color = COLOR_BLACK;
-      if (grandparent) {
-        grandparent.color = COLOR_RED;
-        this.balance(grandparent);
-      }
-    } else if (grandparent) {
-      if (parent === grandparent.left) {
-        if (node === parent.right) {
-          this.leftRotation(parent);
-          node = parent;
-          parent = node.parent!;
+      if (parent === grandparent?.left) {
+        const uncle = grandparent.right;
+
+        if (uncle && uncle.color === COLOR_RED) {
+          parent.color = COLOR_BLACK;
+          uncle.color = COLOR_BLACK;
+          grandparent.color = COLOR_RED;
+          current = grandparent;
+        } else {
+          if (current === parent.right) {
+            this.leftRotate(parent);
+            current = parent;
+            parent = current.parent;
+          }
+          if (grandparent) grandparent.color = COLOR_RED;
+          if (parent) parent.color = COLOR_BLACK;
+          if (grandparent) {
+            this.rightRotate(grandparent);
+          }
         }
-        this.rightRotation(grandparent);
       } else {
-        if (node === parent.left) {
-          this.rightRotation(parent);
-          node = parent;
-          parent = node.parent!;
+        const uncle = grandparent?.left;
+
+        if (uncle && uncle.color === COLOR_RED) {
+          parent.color = COLOR_BLACK;
+          uncle.color = COLOR_BLACK;
+          grandparent.color = COLOR_RED;
+          current = grandparent;
+        } else {
+          if (current === parent.left) {
+            this.rightRotate(parent);
+            current = parent;
+            parent = current.parent;
+          }
+          if (grandparent) grandparent.color = COLOR_RED;
+          if (parent) parent.color = COLOR_BLACK;
+          if (grandparent) {
+            this.leftRotate(grandparent);
+          }
         }
-        this.leftRotation(grandparent);
       }
 
-      parent.color = COLOR_BLACK;
-      grandparent.color = COLOR_RED;
+      parent = current.parent;
     }
+
+    if (this.root) this.root.color = COLOR_BLACK;
   }
 
-  leftRotation(node: Node<T>): void {
-    const { parent } = node;
-    const grandparent = parent!.parent;
+  leftRotate(node: Node<T>): void {
+    const rightChild = node.right;
+    if (!rightChild) return;
 
-    if (parent && grandparent) {
-      const grandparentIsLeft = grandparent.left === parent;
-
-      if (grandparentIsLeft) {
-        grandparent.left = node;
-      } else {
-        grandparent.right = node;
-      }
-
-      node.parent = grandparent;
-
-      parent.right = node.left;
-      if (node.left) {
-        node.left.parent = parent;
-      }
-
-      node.left = parent;
-      parent.parent = node;
+    node.right = rightChild.left;
+    if (rightChild.left) {
+      rightChild.left.parent = node;
     }
+
+    rightChild.parent = node.parent;
+    if (!node.parent) {
+      this.root = rightChild;
+    } else if (node === node.parent.left) {
+      node.parent.left = rightChild;
+    } else {
+      node.parent.right = rightChild;
+    }
+
+    rightChild.left = node;
+    node.parent = rightChild;
   }
 
-  rightRotation(node: Node<T>): void {
-    const { parent } = node;
-    const grandparent = parent!.parent;
+  rightRotate(node: Node<T>): void {
+    const leftChild = node.left;
+    if (!leftChild) return;
 
-    if (parent && grandparent) {
-      const grandparentIsLeft = grandparent.left === parent;
-
-      if (grandparentIsLeft) {
-        grandparent.left = node;
-      } else {
-        grandparent.right = node;
-      }
-
-      node.parent = grandparent;
-
-      parent.left = node.right;
-      if (node.right) {
-        node.right.parent = parent;
-      }
-
-      node.right = parent;
-      parent.parent = node;
+    node.left = leftChild.right;
+    if (leftChild.right) {
+      leftChild.right.parent = node;
     }
+
+    leftChild.parent = node.parent;
+    if (!node.parent) {
+      this.root = leftChild;
+    } else if (node === node.parent.left) {
+      node.parent.left = leftChild;
+    } else {
+      node.parent.right = leftChild;
+    }
+
+    leftChild.right = node;
+    node.parent = leftChild;
+  }
+
+  getRootNode(): Node<T> | null {
+    return this.root;
   }
 }
 

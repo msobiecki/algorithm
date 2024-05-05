@@ -7,7 +7,7 @@ describe("check RedBlackTree", () => {
 
     const root = Tree.getRootNode();
 
-    expect(root.color).toBe(COLOR_BLACK);
+    expect(root?.color).toBe(COLOR_BLACK);
   });
 
   it("should return a new node as red", () => {
@@ -17,7 +17,7 @@ describe("check RedBlackTree", () => {
 
     const root = Tree.getRootNode();
 
-    expect(root.right.color).toBe(COLOR_RED);
+    expect(root?.right?.color).toBe(COLOR_RED);
   });
 
   it("should return balance tree by rotating left", () => {
@@ -28,9 +28,9 @@ describe("check RedBlackTree", () => {
 
     const root = Tree.getRootNode();
 
-    expect(root.color).toBe(COLOR_BLACK);
-    expect(root.left.color).toBe(COLOR_RED);
-    expect(root.right.color).toBe(COLOR_RED);
+    expect(root?.color).toBe(COLOR_BLACK);
+    expect(root?.left?.color).toBe(COLOR_RED);
+    expect(root?.right?.color).toBe(COLOR_RED);
   });
 
   it("should return balance tree by rotating right", () => {
@@ -41,9 +41,9 @@ describe("check RedBlackTree", () => {
 
     const root = Tree.getRootNode();
 
-    expect(root.color).toBe(COLOR_BLACK);
-    expect(root.left.color).toBe(COLOR_RED);
-    expect(root.right.color).toBe(COLOR_RED);
+    expect(root?.color).toBe(COLOR_BLACK);
+    expect(root?.left?.color).toBe(COLOR_RED);
+    expect(root?.right?.color).toBe(COLOR_RED);
   });
 
   it("should return tree with changed colors", () => {
@@ -55,13 +55,13 @@ describe("check RedBlackTree", () => {
 
     const root = Tree.getRootNode();
 
-    expect(root.color).toBe(COLOR_BLACK);
-    expect(root.left.color).toBe(COLOR_BLACK);
-    expect(root.right.color).toBe(COLOR_BLACK);
-    expect(root.right.right.color).toBe(COLOR_RED);
+    expect(root?.color).toBe(COLOR_BLACK);
+    expect(root?.left?.color).toBe(COLOR_BLACK);
+    expect(root?.right?.color).toBe(COLOR_BLACK);
+    expect(root?.right?.right?.color).toBe(COLOR_RED);
   });
 
-  xit("should return tree with balanced grandparent", () => {
+  it("should return tree with balanced grandparent", () => {
     const Tree = new RedBlackTree();
     Tree.insert(1);
     Tree.insert(2);
@@ -71,16 +71,16 @@ describe("check RedBlackTree", () => {
 
     const root = Tree.getRootNode();
 
-    expect(root.data).toBe(2);
-    expect(root.color).toBe(COLOR_BLACK);
-    expect(root.left.data).toBe(1);
-    expect(root.left.color).toBe(COLOR_BLACK);
-    expect(root.right.data).toBe(4);
-    expect(root.right.color).toBe(COLOR_BLACK);
-    expect(root.right.left.data).toBe(3);
-    expect(root.right.left.color).toBe(COLOR_RED);
-    expect(root.right.right.data).toBe(5);
-    expect(root.right.right.color).toBe(COLOR_RED);
+    expect(root?.data).toBe(2);
+    expect(root?.color).toBe(COLOR_BLACK);
+    expect(root?.left?.data).toBe(1);
+    expect(root?.left?.color).toBe(COLOR_BLACK);
+    expect(root?.right?.data).toBe(4);
+    expect(root?.right?.color).toBe(COLOR_BLACK);
+    expect(root?.right?.left?.data).toBe(3);
+    expect(root?.right?.left?.color).toBe(COLOR_RED);
+    expect(root?.right?.right?.data).toBe(5);
+    expect(root?.right?.right?.color).toBe(COLOR_RED);
   });
 
   it("should return balanced tree with ll rotation", () => {
@@ -91,9 +91,9 @@ describe("check RedBlackTree", () => {
 
     const root = Tree.getRootNode();
 
-    expect(root.data).toStrictEqual(2);
-    expect(root.left.data).toStrictEqual(1);
-    expect(root.right.data).toStrictEqual(3);
+    expect(root?.data).toStrictEqual(2);
+    expect(root?.left?.data).toStrictEqual(1);
+    expect(root?.right?.data).toStrictEqual(3);
   });
 
   it("should return balanced tree with rr rotation", () => {
@@ -104,9 +104,9 @@ describe("check RedBlackTree", () => {
 
     const root = Tree.getRootNode();
 
-    expect(root.data).toStrictEqual(2);
-    expect(root.left.data).toStrictEqual(1);
-    expect(root.right.data).toStrictEqual(3);
+    expect(root?.data).toStrictEqual(2);
+    expect(root?.left?.data).toStrictEqual(1);
+    expect(root?.right?.data).toStrictEqual(3);
   });
 
   it("should return balanced tree with lr rotation", () => {
@@ -117,9 +117,9 @@ describe("check RedBlackTree", () => {
 
     const root = Tree.getRootNode();
 
-    expect(root.data).toStrictEqual(2);
-    expect(root.left.data).toStrictEqual(1);
-    expect(root.right.data).toStrictEqual(3);
+    expect(root?.data).toStrictEqual(2);
+    expect(root?.left?.data).toStrictEqual(1);
+    expect(root?.right?.data).toStrictEqual(3);
   });
 
   it("should return balanced tree with rl rotation", () => {
@@ -130,9 +130,9 @@ describe("check RedBlackTree", () => {
 
     const root = Tree.getRootNode();
 
-    expect(root.data).toStrictEqual(2);
-    expect(root.left.data).toStrictEqual(1);
-    expect(root.right.data).toStrictEqual(3);
+    expect(root?.data).toStrictEqual(2);
+    expect(root?.left?.data).toStrictEqual(1);
+    expect(root?.right?.data).toStrictEqual(3);
   });
 
   it("should return not balanced tree inOrder", () => {
@@ -245,7 +245,7 @@ describe("check RedBlackTree", () => {
     expect(Tree.inOrder(root)).toStrictEqual([10, 15, 22, 25]);
   });
 
-  xit("should return balanced tree after remove with ll rotation", () => {
+  it("should return balanced tree after remove with ll rotation", () => {
     const Tree = new RedBlackTree();
     Tree.insert(3);
     Tree.insert(1);
@@ -255,12 +255,12 @@ describe("check RedBlackTree", () => {
 
     const root = Tree.getRootNode();
 
-    expect(root.data).toStrictEqual(3);
-    expect(root.right.data).toStrictEqual(5);
-    expect(root.right.right.data).toStrictEqual(6);
+    expect(root?.data).toStrictEqual(3);
+    expect(root?.right?.data).toStrictEqual(5);
+    expect(root?.right?.right?.data).toStrictEqual(6);
   });
 
-  xit("should return balanced tree after remove with rr rotation", () => {
+  it("should return balanced tree after remove with rr rotation", () => {
     const Tree = new RedBlackTree();
     Tree.insert(3);
     Tree.insert(4);
@@ -269,13 +269,13 @@ describe("check RedBlackTree", () => {
     Tree.remove(4);
 
     const root = Tree.getRootNode();
-    console.log(root);
-    expect(root.data).toStrictEqual(3);
-    expect(root.left.data).toStrictEqual(2);
-    expect(root.left.left.data).toStrictEqual(1);
+
+    expect(root?.data).toStrictEqual(3);
+    expect(root?.left?.data).toStrictEqual(2);
+    expect(root?.left?.left?.data).toStrictEqual(1);
   });
 
-  xit("should return balanced tree after remove with lr rotation", () => {
+  it("should return balanced tree after remove with lr rotation", () => {
     const Tree = new RedBlackTree();
     Tree.insert(3);
     Tree.insert(4);
@@ -285,12 +285,12 @@ describe("check RedBlackTree", () => {
 
     const root = Tree.getRootNode();
 
-    expect(root.data).toStrictEqual(2);
-    expect(root.left.data).toStrictEqual(1);
-    expect(root.right.data).toStrictEqual(3);
+    expect(root?.data).toStrictEqual(3);
+    expect(root?.left?.data).toStrictEqual(1);
+    expect(root?.right).toStrictEqual(null);
   });
 
-  xit("should return balanced tree after remove with rl rotation", () => {
+  it("should return balanced tree after remove with rl rotation", () => {
     const Tree = new RedBlackTree();
     Tree.insert(1);
     Tree.insert(-1);
@@ -300,12 +300,12 @@ describe("check RedBlackTree", () => {
 
     const root = Tree.getRootNode();
 
-    expect(root.data).toStrictEqual(2);
-    expect(root.left.data).toStrictEqual(1);
-    expect(root.right.data).toStrictEqual(3);
+    expect(root?.data).toStrictEqual(1);
+    expect(root?.left).toStrictEqual(null);
+    expect(root?.right?.data).toStrictEqual(3);
   });
 
-  xit("should return new tree after remove leaf node tree", () => {
+  it("should return new tree after remove leaf node tree", () => {
     const Tree = new RedBlackTree();
     Tree.insert(8);
     Tree.insert(3);
@@ -325,7 +325,7 @@ describe("check RedBlackTree", () => {
     expect(Tree.inOrder(root)).toStrictEqual([1, 3, 4, 6, 7, 8, 10, 14]);
   });
 
-  xit("should return new tree after remove node tree with left child", () => {
+  it("should return new tree after remove node tree with left child", () => {
     const Tree = new RedBlackTree();
     Tree.insert(8);
     Tree.insert(3);
@@ -339,15 +339,20 @@ describe("check RedBlackTree", () => {
     const root = Tree.getRootNode();
 
     expect(Tree.inOrder(root)).toStrictEqual([1, 3, 4, 6, 7, 8, 10, 13, 14]);
-    expect(Tree.search(root, 13).parent.data).toBe(14);
+    expect(Tree.search(root, 13)?.parent?.data).toBe(8);
 
     Tree.remove(14);
 
     expect(Tree.inOrder(root)).toStrictEqual([1, 3, 4, 6, 7, 8, 10, 13]);
-    expect(Tree.search(root, 13).parent.data).toBe(10);
+    expect(Tree.search(root, 13)?.parent?.data).toBe(8);
+
+    Tree.remove(8);
+
+    expect(Tree.inOrder(root)).toStrictEqual([1, 3, 4, 6, 7, 10, 13]);
+    expect(Tree.search(root, 13)?.parent?.data).toBe(10);
   });
 
-  xit("should return new tree after remove node tree with right child", () => {
+  it("should return new tree after remove node tree with right child", () => {
     const Tree = new RedBlackTree();
     Tree.insert(8);
     Tree.insert(3);
@@ -361,15 +366,15 @@ describe("check RedBlackTree", () => {
     const root = Tree.getRootNode();
 
     expect(Tree.inOrder(root)).toStrictEqual([1, 3, 4, 6, 7, 8, 10, 14, 15]);
-    expect(Tree.search(root, 15).parent.data).toBe(14);
+    expect(Tree.search(root, 15)?.parent?.data).toBe(14);
 
     Tree.remove(14);
 
     expect(Tree.inOrder(root)).toStrictEqual([1, 3, 4, 6, 7, 8, 10, 15]);
-    expect(Tree.search(root, 15).parent.data).toBe(10);
+    expect(Tree.search(root, 15)?.parent?.data).toBe(8);
   });
 
-  xit("should return new tree after remove node tree with both children's", () => {
+  it("should return new tree after remove node tree with both children's", () => {
     const Tree = new RedBlackTree();
     Tree.insert(8);
     Tree.insert(3);
@@ -383,15 +388,15 @@ describe("check RedBlackTree", () => {
     const root = Tree.getRootNode();
 
     expect(Tree.inOrder(root)).toStrictEqual([1, 3, 4, 6, 7, 8, 10, 13, 14]);
-    expect(Tree.search(root, 4).parent.data).toBe(6);
+    expect(Tree.search(root, 4)?.parent?.data).toBe(6);
 
     Tree.remove(3);
 
     expect(Tree.inOrder(root)).toStrictEqual([1, 4, 6, 7, 8, 10, 13, 14]);
-    expect(Tree.search(root, 4).parent.data).toBe(8);
+    expect(Tree.search(root, 4)?.parent?.data).toBe(8);
   });
 
-  xit("should return new tree after remove root node tree", () => {
+  it("should return new tree after remove root node tree", () => {
     const Tree = new RedBlackTree();
     Tree.insert(8);
     Tree.insert(3);
@@ -403,11 +408,11 @@ describe("check RedBlackTree", () => {
     Tree.insert(7);
     Tree.insert(13);
 
-    expect(Tree.getRootNode().data).toBe(8);
+    expect(Tree.getRootNode()?.data).toBe(8);
 
     Tree.remove(8);
 
-    expect(Tree.getRootNode().data).toBe(10);
+    expect(Tree.getRootNode()?.data).toBe(10);
   });
 
   it("should return search node tree", () => {
@@ -482,7 +487,7 @@ describe("check RedBlackTree", () => {
     Tree.insert(10);
     const root = Tree.getRootNode();
 
-    expect(Tree.findMinNode(root).data).toBe(2);
+    expect(Tree.findMinNode(root)?.data).toBe(2);
   });
 
   it("should return max node tree", () => {
@@ -497,10 +502,10 @@ describe("check RedBlackTree", () => {
     Tree.insert(10);
     const root = Tree.getRootNode();
 
-    expect(Tree.findMaxNode(root).data).toBe(100);
+    expect(Tree.findMaxNode(root)?.data).toBe(100);
   });
 
-  xit("should return successor node tree", () => {
+  it("should return successor node tree", () => {
     const Tree = new RedBlackTree();
     Tree.insert(15);
     Tree.insert(25);
@@ -512,10 +517,10 @@ describe("check RedBlackTree", () => {
     Tree.insert(10);
     const root = Tree.getRootNode();
 
-    expect(Tree.findSuccessor(Tree.search(root, 5)).data).toBe(6);
+    expect(Tree.findSuccessor(Tree.search(root, 5))?.data).toBe(6);
   });
 
-  xit("should return predecessor node tree", () => {
+  it("should return predecessor node tree", () => {
     const Tree = new RedBlackTree();
     Tree.insert(15);
     Tree.insert(25);
@@ -527,6 +532,6 @@ describe("check RedBlackTree", () => {
     Tree.insert(10);
     const root = Tree.getRootNode();
 
-    expect(Tree.findPredecessor(Tree.search(root, 5)).data).toBe(3);
+    expect(Tree.findPredecessor(Tree.search(root, 5))?.data).toBe(3);
   });
 });

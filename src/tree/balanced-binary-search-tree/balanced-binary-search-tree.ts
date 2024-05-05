@@ -1,5 +1,5 @@
 import BasicNode from "../node";
-import BinarySearchTree from "../binary_search_tree";
+import BinarySearchTree from "../binary-search-tree";
 
 /**
  * Node class for Balanced Binary Search Tree
@@ -145,6 +145,10 @@ class BalancedBinarySearchTree<T> extends BinarySearchTree<T> {
     } else {
       newChildNode.parent = null;
     }
+  }
+
+  getRootNode(): Node<T> | null {
+    return this.root;
   }
 }
 

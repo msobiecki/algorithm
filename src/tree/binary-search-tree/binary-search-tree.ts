@@ -51,6 +51,7 @@ class BinarySearchTree<T> {
       node.right = this.removeNode(node.right, data);
       return node;
     }
+
     if (node.left === null && node.right === null) {
       node = null;
       return node;
@@ -71,11 +72,9 @@ class BinarySearchTree<T> {
       return node;
     }
 
-    const aux = this.findMinNode(node.right);
-    if (aux) {
-      node.data = aux.data;
-      node.right = this.removeNode(node.right, aux.data);
-    }
+    const successor = this.findMinNode(node.right);
+    node.data = successor!.data;
+    node.right = this.removeNode(node.right, successor!.data);
     return node;
   }
 

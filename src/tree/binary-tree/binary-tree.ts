@@ -139,6 +139,17 @@ class BinaryTree<T> {
     return currentNode;
   }
 
+  interactiveSearch(node: Node<T> | null, data: T): Node<T> | null {
+    let temporaryNode: Node<T> | null = node;
+
+    while (temporaryNode !== null && temporaryNode.data !== data) {
+      temporaryNode =
+        data < temporaryNode.data ? temporaryNode.left : temporaryNode.right;
+    }
+
+    return temporaryNode;
+  }
+
   findSuccessor(node: Node<T> | null): Node<T> | null {
     if (node?.right !== null) return this.findMinNode(node!.right);
     let temporaryNode = node.parent;

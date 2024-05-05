@@ -1,6 +1,6 @@
 import depthFirstSearch from "./depth-first-search";
 
-import BinarySearchTree from "../../tree/binary_search_tree";
+import BinarySearchTree from "../../tree/binary-search-tree";
 
 describe("check depthFirstSearch", () => {
   it("should return depth first search found in binary search tree", () => {

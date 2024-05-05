@@ -1,6 +1,6 @@
 import breadthFirstSearch from "./breadth-first-search";
 
-import BinarySearchTree from "../../tree/binary_search_tree";
+import BinarySearchTree from "../../tree/binary-search-tree";
 
 describe("check breadthFirstSearch", () => {
   it("should return breadth first search found value in binary search tree", () => {
