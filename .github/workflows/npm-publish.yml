@@ -29,14 +29,14 @@ jobs:
       # Use node
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
-        # Set env secrets
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.ACTIONS_READ_PACKAGES }}
         with:
           node-version: ${{ matrix.node-version }}
 
       # Run install step 
       - run: npm ci
+        # Set env secrets
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.ACTIONS_READ_PACKAGES }}
       # Run test step
       - run: npm test
   publish:
