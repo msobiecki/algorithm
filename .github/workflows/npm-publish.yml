@@ -31,7 +31,7 @@ jobs:
         uses: actions/setup-node@v4
         # Set env secrets
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_PUBLISH_PACKAGES_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           node-version: ${{ matrix.node-version }}
 
