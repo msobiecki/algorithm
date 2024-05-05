@@ -27,14 +27,6 @@
     "clean": "rimraf dist",
     "prepare": "husky"
   },
-  "lint-staged": {
-    "**/*.ts": [
-      "eslint --fix"
-    ],
-    "**/*.{json,md}": [
-      "prettier --write"
-    ]
-  },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
