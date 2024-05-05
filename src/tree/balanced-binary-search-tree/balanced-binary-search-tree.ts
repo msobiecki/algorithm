@@ -1,67 +1,91 @@
-import BinarySearchTree, {
-  Node as BasicNode,
-} from "../binary_search_tree/binary_search_tree";
+import BasicNode from "../node";
+import BinarySearchTree from "../binary_search_tree";
 
 /**
- * Node class
+ * Node class for Balanced Binary Search Tree
  */
-export class Node extends BasicNode {
-  get height() {
+class Node<T> extends BasicNode<T> {
+  parent: Node<T> | null;
+
+  left: Node<T> | null;
+
+  right: Node<T> | null;
+
+  constructor(data: T) {
+    super(data);
+    this.parent = null;
+    this.left = null;
+    this.right = null;
+  }
+
+  get height(): number {
     return Math.max(this.leftSubtreeHeight, this.rightSubtreeHeight);
   }
 
-  get leftSubtreeHeight() {
+  get leftSubtreeHeight(): number {
     return this.left ? this.left.height + 1 : 0;
   }
 
-  get rightSubtreeHeight() {
+  get rightSubtreeHeight(): number {
     return this.right ? this.right.height + 1 : 0;
   }
 
-  get balanceFactor() {
+  get balanceFactor(): number {
     return this.leftSubtreeHeight - this.rightSubtreeHeight;
   }
 }
 
 /**
- * Balanced Binary Search Tree class
+ * Balanced Binary Search Tree class (AVL Tree)
  */
-class BalancedBinarySearchTree extends BinarySearchTree {
-  insert(data) {
+class BalancedBinarySearchTree<T> extends BinarySearchTree<T> {
+  root!: Node<T> | null;
+
+  insert(data: T): void {
     const newNode = new Node(data);
-    if (this.root === null) this.root = newNode;
-    else this.insertNode(this.root, newNode);
+    if (this.root === null) {
+      this.root = newNode;
+    } else {
+      this.insertNode(this.root, newNode);
+    }
     this.root = this.balanceUpstream(this.root);
   }
 
-  remove(data) {
+  remove(data: T): void {
     super.remove(data);
     this.root = this.balanceUpstream(this.root);
   }
 
-  balanceUpstream(node) {
-    let currentNode = node;
-    let newParentNode;
+  balanceUpstream(node: Node<T> | null): Node<T> | null {
+    let currentNode: Node<T> | null = node;
+    let newParentNode: Node<T> | null = null;
+
     while (currentNode !== null) {
       newParentNode = this.balance(currentNode);
       currentNode = currentNode.parent;
     }
+
     return newParentNode;
   }
 
-  balance(node) {
+  balance(node: Node<T>): Node<T> {
     if (node.balanceFactor > 1) {
-      if (node.left.balanceFactor < 0) return this.leftRightRotation(node);
+      if (node.left!.balanceFactor < 0) {
+        return this.leftRightRotation(node);
+      }
       return this.rightRotation(node);
-    } else if (node.balanceFactor < -1) {
-      if (node.right.balanceFactor > 0) return this.rightLeftRotation(node);
+    }
+    if (node.balanceFactor < -1) {
+      if (node.right!.balanceFactor > 0) {
+        return this.rightLeftRotation(node);
+      }
       return this.leftRotation(node);
     }
     return node;
   }
 
-  leftRotation(node) {
-    const newParentNode = node.right;
+  leftRotation(node: Node<T>): Node<T> {
+    const newParentNode = node.right!;
     const grandparentNode = node.parent;
     const previousLeftNode = newParentNode.left;
 
@@ -80,8 +104,8 @@ class BalancedBinarySearchTree extends BinarySearchTree {
     return newParentNode;
   }
 
-  rightRotation(node) {
-    const newParentNode = node.left;
+  rightRotation(node: Node<T>): Node<T> {
+    const newParentNode = node.left!;
     const grandparentNode = node.parent;
     const previousRightNode = newParentNode.right;
 
@@ -100,20 +124,23 @@ class BalancedBinarySearchTree extends BinarySearchTree {
     return newParentNode;
   }
 
-  leftRightRotation(node) {
-    this.leftRotation(node.left);
+  leftRightRotation(node: Node<T>): Node<T> {
+    this.leftRotation(node.left!);
     return this.rightRotation(node);
   }
 
-  rightLeftRotation(node) {
-    this.rightRotation(node.right);
+  rightLeftRotation(node: Node<T>): Node<T> {
+    this.rightRotation(node.right!);
     return this.leftRotation(node);
   }
 
-  swapParentChildNode(oldChildNode, newChildNode, parentNode) {
+  swapParentChildNode(
+    oldChildNode: Node<T>,
+    newChildNode: Node<T>,
+    parentNode: Node<T> | null,
+  ): void {
     if (parentNode) {
-      const side =
-        oldChildNode.parent.right === oldChildNode ? "right" : "left";
+      const side = parentNode.right === oldChildNode ? "right" : "left";
       parentNode[side] = newChildNode;
     } else {
       newChildNode.parent = null;

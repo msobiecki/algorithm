@@ -1,8 +1,9 @@
-import BinarySearchTree from "./../../tree/binary_search_tree";
-import breadth_first_search from "./breadth_first_search";
+import depthFirstSearch from "./depth-first-search";
 
-describe("[TEST BREADTH FIRST SEARCH TREE] -", () => {
-  it("should return breadth first search found value in binary search tree", () => {
+import BinarySearchTree from "../../tree/binary_search_tree";
+
+describe("check depthFirstSearch", () => {
+  it("should return depth first search found in binary search tree", () => {
     const Tree = new BinarySearchTree();
     Tree.insert(10);
     Tree.insert(4);
@@ -12,9 +13,7 @@ describe("[TEST BREADTH FIRST SEARCH TREE] -", () => {
     Tree.insert(12);
     Tree.insert(18);
     const root = Tree.getRootNode();
-    expect(breadth_first_search(root, 18)).toStrictEqual([
-      10, 4, 17, 1, 9, 12, 18,
-    ]);
+    expect(depthFirstSearch(root, 18)).toStrictEqual([10, 4, 1, 9, 17, 12, 18]);
   });
 
   it("should return breadth first search not found in binary search tree", () => {
@@ -30,6 +29,6 @@ describe("[TEST BREADTH FIRST SEARCH TREE] -", () => {
     Tree.insert(9);
     Tree.insert(27);
     const root = Tree.getRootNode();
-    expect(breadth_first_search(root, 44)).toStrictEqual(null);
+    expect(depthFirstSearch(root, 44)).toStrictEqual(null);
   });
 });

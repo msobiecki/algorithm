@@ -1,28 +1,23 @@
-/* eslint no-param-reassign: ["error", { "props": false }] */
-
 /**
- * Bubble sort
- * @param array Array of numbers
+ * Sorts an array in-place using the bubble sort algorithm
+ * @param array Array to be sorted
  * @returns Sorted array
  */
 function bubbleSort(array: number[]): number[] {
-  if (array.length < 2) return array;
-
-  const arrayLength = array.length;
+  let n = array.length;
   let swapped;
+
   do {
     swapped = false;
-    for (let index = 0; index < arrayLength; index += 1) {
-      for (let indexB = 0; indexB < arrayLength; indexB += 1) {
-        if (array[indexB] > array[indexB + 1]) {
-          const temporary = array[indexB];
-          array[indexB] = array[indexB + 1];
-          array[indexB + 1] = temporary;
-          swapped = true;
-        }
+    for (let index = 0; index < n - 1; index += 1) {
+      if (array[index] > array[index + 1]) {
+        [array[index], array[index + 1]] = [array[index + 1], array[index]];
+        swapped = true;
       }
     }
+    n -= 1;
   } while (swapped);
+
   return array;
 }
 

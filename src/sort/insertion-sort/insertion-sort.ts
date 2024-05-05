@@ -1,8 +1,6 @@
-/* eslint no-param-reassign: ["error", { "props": false }] */
-
 /**
- * Insertion sort
- * @param array Array of numbers
+ * Sorts an array using the insertion sort algorithm
+ * @param array Array to be sorted
  * @returns Sorted array
  */
 function insertionSort(array: number[]) {

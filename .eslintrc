@@ -2,5 +2,14 @@
   "extends": [
     "@msobiecki/eslint-config", 
     "@msobiecki/eslint-config/best-practice"
-  ]
+  ],
+  "rules": {
+    "no-param-reassign": "off",
+    "no-restricted-exports": "off",
+    "class-methods-use-this": "off",
+    "max-classes-per-file": "off",
+    "import/prefer-default-export": "off",
+    "unicorn/no-null": "off",
+    "unicorn/prefer-switch": "off"
+  }
 }

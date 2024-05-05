@@ -1,10 +1,10 @@
 /**
- * Recursion
- * @param data The input data to be processed recursively
- * @param condition A function that checks the termination condition
- * @param operation A function that performs an operation on the data
- * @param callback A function to be called when the recursion terminates
- * @returns The result of the recursion
+ * General-purpose recursive function
+ * @param data Initial data to process
+ * @param condition Function to check the termination condition
+ * @param operation Function to perform on the data in each iteration
+ * @param callback Function to return the final result
+ * @returns Final result after recursion
  */
 function recursion<T>(
   data: T,

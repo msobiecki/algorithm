@@ -1,6 +1,6 @@
-import BinaryTree from "./binary_tree";
+import BinaryTree from "./binary-tree";
 
-describe("[TEST BINARY TREE] -", () => {
+describe("check BinaryTree", () => {
   it("should return inOrder tree", () => {
     const Tree = new BinaryTree();
     Tree.insert(15);
@@ -129,7 +129,7 @@ describe("[TEST BINARY TREE] -", () => {
     Tree.insert(10);
     const root = Tree.getRootNode();
 
-    expect(Tree.findMinNode(root).data).toBe(2);
+    expect(Tree.findMinNode(root)?.data).toBe(2);
   });
 
   it("should return max node tree", () => {
@@ -144,7 +144,7 @@ describe("[TEST BINARY TREE] -", () => {
     Tree.insert(10);
     const root = Tree.getRootNode();
 
-    expect(Tree.findMaxNode(root).data).toBe(100);
+    expect(Tree.findMaxNode(root)?.data).toBe(100);
   });
 
   it("should return successor node tree", () => {
@@ -159,7 +159,7 @@ describe("[TEST BINARY TREE] -", () => {
     Tree.insert(10);
     const root = Tree.getRootNode();
 
-    expect(Tree.findSuccessor(Tree.search(root, 5)).data).toBe(2);
+    expect(Tree.findSuccessor(Tree.search(root, 5))?.data).toBe(2);
   });
 
   it("should return predecessor node tree", () => {
@@ -174,6 +174,6 @@ describe("[TEST BINARY TREE] -", () => {
     Tree.insert(10);
     const root = Tree.getRootNode();
 
-    expect(Tree.findPredecessor(Tree.search(root, 5)).data).toBe(15);
+    expect(Tree.findPredecessor(Tree.search(root, 5))?.data).toBe(15);
   });
 });

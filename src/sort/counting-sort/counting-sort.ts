@@ -1,10 +1,8 @@
-/* eslint no-param-reassign: ["error", { "props": false }] */
-
 /**
- * Counting sort
- * @param array Array of numbers
- * @param min Minimum number
- * @param max Maximum number
+ * Sorts an array using the counting sort algorithm
+ * @param array Array to be sorted
+ * @param min Minimum value in the array
+ * @param max Maximum value in the array
  * @returns Sorted array
  */
 function countingSort(array: number[], min: number, max: number) {

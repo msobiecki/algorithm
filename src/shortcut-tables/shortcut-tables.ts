@@ -1,17 +1,21 @@
 /**
- * Shortcut tables
- * @param array The array for which shortcut tables are generated
- * @returns An object representing the shortcut tables with item counts
+ * Function to create a shortcut table (frequency map) for an array of strings
+ * @param data Array of strings
+ * @returns Shortcut table (object) with string frequencies
  */
-function shortcutTables(array: string[]): Record<string, number> {
-  const result: Record<string, number> = {};
+function shortcutTables(data: string[]): Record<string, number> {
+  const frequencyMap: Record<string, number> = {};
 
   // eslint-disable-next-line no-restricted-syntax
-  for (const item of array) {
-    result[item] = result[item] === undefined ? 1 : result[item] + 1;
+  for (const item of data) {
+    if (frequencyMap[item]) {
+      frequencyMap[item] += 1;
+    } else {
+      frequencyMap[item] = 1;
+    }
   }
 
-  return result;
+  return frequencyMap;
 }
 
 export default shortcutTables;

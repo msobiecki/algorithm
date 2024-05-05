@@ -3,5 +3,5 @@ export * from "./recursion";
 export * from "./search-algorithms";
 export * from "./shortcut-tables";
 export * from "./sort";
-// export * from "./tree";
-// export * from "./tree-algorithms";
+export * from "./tree";
+export * from "./tree_algorithms";

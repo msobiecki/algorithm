@@ -25,8 +25,8 @@ function heapify(array: number[], length: number, index: number) {
 }
 
 /**
- * Heap sort
- * @param array Array of numbers
+ * Sorts an array using the heap sort algorithm
+ * @param array Array to be sorted
  * @returns Sorted array
  */
 function heapSort(array: number[]) {

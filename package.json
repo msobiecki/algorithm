@@ -21,9 +21,10 @@
   "browser": "dist/algorithm.umd.js",
   "types": "dist/algorithm.d.ts",
   "scripts": {
-    "test": "jest",
-    "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript --bundleConfigAsCjs",
     "dev": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript --bundleConfigAsCjs -w",
+    "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript --bundleConfigAsCjs",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "clean": "rimraf dist",
     "prepare": "husky"
   },

@@ -1,6 +1,6 @@
-import RedBlackTree, { COLOR_BLACK, COLOR_RED } from "./red_black_tree";
+import RedBlackTree, { COLOR_BLACK, COLOR_RED } from "./red-black-tree";
 
-describe("[TEST RED BLACK TREE] -", () => {
+describe("check RedBlackTree", () => {
   it("should return root black", () => {
     const Tree = new RedBlackTree();
     Tree.insert(1);

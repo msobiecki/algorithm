@@ -1,22 +1,20 @@
-// Helper function to determine if a value is an object (excluding arrays and null)
 /**
- *
- * @param value
- * @returns
+ * Helper function to determine if a value is an object (excluding arrays and null)
+ * @param value The value to check
+ * @returns Whether the value is an object (excluding arrays and null)
  */
 function isObject(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
-// Recursive deep copy function
 /**
- *
- * @param value
- * @returns
+ * Recursive deep copy function
+ * @param value The value to copy
+ * @returns Deep copy of the value
  */
 function copy(value: unknown): unknown {
   if (Array.isArray(value)) {
-    return value.map((item) => copy(item));
+    return value.map((element) => copy(element));
   }
   if (isObject(value)) {
     const copiedObject: Record<string, unknown> = {};
@@ -32,7 +30,7 @@ function copy(value: unknown): unknown {
 }
 
 /**
- * Deep copy
+ * Deep copy function
  * @param inObject Object to copy
  * @returns Deep copy of the object
  */
