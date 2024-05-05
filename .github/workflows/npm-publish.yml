@@ -19,6 +19,10 @@ jobs:
     # Permissions
     permissions:
       packages: read
+
+    # Set env secrets
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.ACTIONS_READ_PACKAGES }}
     
     # The type of node version that the job will run on
     strategy:
@@ -38,9 +42,6 @@ jobs:
 
       # Run install step 
       - run: npm ci
-        # Set env secrets
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.ACTIONS_READ_PACKAGES }}
       # Run test step
       - run: npm test
   publish:
