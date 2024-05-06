@@ -1,3 +1,7 @@
+## [1.14.2](https://github.com/msobiecki/algorithm/compare/v1.14.1...v1.14.2) (2024-05-06)
+
+
+
 ## [1.14.1](https://github.com/msobiecki/algorithm/compare/v1.14.0...v1.14.1) (2024-05-06)
 
 
@@ -40,7 +44,6 @@
 * update ([80f70b9](https://github.com/msobiecki/algorithm/commit/80f70b907819c552119ecf49787301bfd46ebef6))
 * update ([7c4d037](https://github.com/msobiecki/algorithm/commit/7c4d037d7e1c5329a4b45202f095c8097c8d4366))
 * update ([a7dcd6a](https://github.com/msobiecki/algorithm/commit/a7dcd6a54a89ae238365776de1aee03915ee7dcb))
-* update ([cc07a57](https://github.com/msobiecki/algorithm/commit/cc07a572270e88389c95dcb87d48ce557b257d3f))
 
 
 
