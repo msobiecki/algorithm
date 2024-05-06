@@ -1,4 +1,4 @@
-# [1.13.0](https://github.com/msobiecki/algorithm/compare/v1.11.0...v1.13.0) (2024-05-06)
+# [1.14.0](https://github.com/msobiecki/algorithm/compare/v1.11.0...v1.14.0) (2024-05-06)
 
 
 ### Features
