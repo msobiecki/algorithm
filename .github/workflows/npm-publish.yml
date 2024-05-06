@@ -78,7 +78,7 @@ jobs:
       # Run version bump step
       - name: Run version bump
         id: changelog
-        uses: TriPSs/conventional-changelog-action@v3.18.0
+        uses: TriPSs/conventional-changelog-action@v5.2.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
