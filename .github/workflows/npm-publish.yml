@@ -78,6 +78,7 @@ jobs:
         uses: TriPSs/conventional-changelog-action@v5.2.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          skip-on-empty: false
       # Run release step
       - name: Run release
         uses: actions/create-release@v1
