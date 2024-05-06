@@ -27,7 +27,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-
       # Use node
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
@@ -38,13 +37,13 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: https://npm.pkg.github.com
           scope: "@msobiecki"
-
       # Run install step 
       - run: npm ci
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # Run test step
       - run: npm test
+
   publish:
     needs: test
 
@@ -63,7 +62,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-
       # Use node
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
@@ -74,14 +72,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: https://npm.pkg.github.com
           scope: "@msobiecki"
-          
       # Run version bump step
       - name: Run version bump
         id: changelog
         uses: TriPSs/conventional-changelog-action@v5.2.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-
       # Run release step
       - name: Run release
         uses: actions/create-release@v1
@@ -91,7 +87,6 @@ jobs:
           tag_name: ${{ steps.changelog.outputs.tag }}
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
-
       # Run install step 
       - run: npm ci
       # Run clean step
