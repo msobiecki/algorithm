@@ -1,6 +1,6 @@
 {
   "name": "@msobiecki/algorithm",
-  "version": "1.14.7",
+  "version": "1.14.8",
   "private": false,
   "description": "A collection of popular algorithms implemented in JavaScript.",
   "keywords": [
