@@ -1,3 +1,7 @@
+## [1.14.59](https://github.com/msobiecki/algorithm/compare/v1.14.58...v1.14.59) (2024-10-15)
+
+
+
 ## [1.14.58](https://github.com/msobiecki/algorithm/compare/v1.14.57...v1.14.58) (2024-10-15)
 
 
@@ -11,10 +15,6 @@
 
 
 ## [1.14.55](https://github.com/msobiecki/algorithm/compare/v1.14.54...v1.14.55) (2024-09-25)
-
-
-
-## [1.14.54](https://github.com/msobiecki/algorithm/compare/v1.14.53...v1.14.54) (2024-08-20)
 
 
 
