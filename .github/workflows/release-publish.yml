@@ -1,4 +1,4 @@
-name: Run publish
+name: Release publish
 on:
   push:
     branches: [ master ]
